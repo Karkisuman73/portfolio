@@ -95,7 +95,7 @@ const Projects = () => {
     "WhatsApp Redirect"
   ],
   github: "https://github.com/yourusername/gym-website",
-  live: "https://www.sastogadget.com/",
+  live: "https://pinnacel-fitness.vercel.app",
   icon: "🏋️",
   featured: false,
   category: "frontend",
