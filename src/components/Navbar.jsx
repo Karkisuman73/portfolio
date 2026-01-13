@@ -6,7 +6,7 @@ const Navbar = () => {
   const [activeLink, setActiveLink] = useState('home');
   const [scrolled, setScrolled] = useState(false);
 
-  // Handle scroll effect for navbar background
+  
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -15,11 +15,11 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Handle active section detection
+  
   useEffect(() => {
     const handleScrollSpy = () => {
       const sections = ['home', 'about', 'projects', 'skills', 'contact'];
-      const scrollPosition = window.scrollY + 100; // Offset for navbar
+      const scrollPosition = window.scrollY + 100; 
 
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -34,7 +34,7 @@ const Navbar = () => {
     };
 
     window.addEventListener('scroll', handleScrollSpy);
-    handleScrollSpy(); // Check on initial load
+    handleScrollSpy(); 
 
     return () => window.removeEventListener('scroll', handleScrollSpy);
   }, []);
@@ -95,7 +95,6 @@ const Navbar = () => {
             </a>
           </div>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1">
             <div className="flex items-center space-x-1 bg-white/50 backdrop-blur-sm rounded-full p-1 border border-gray-100 shadow-sm">
               {navLinks.map((link) => (
@@ -119,8 +118,6 @@ const Navbar = () => {
                 </a>
               ))}
             </div>
-            
-            {/* Contact Button */}
             <a 
               href="#contact"
               onClick={(e) => {

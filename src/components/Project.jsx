@@ -1,3 +1,4 @@
+import { div } from 'framer-motion/client';
 import React, { useState } from 'react';
 import { FaGithub, FaExternalLinkAlt, FaStar, FaCode, FaEye } from 'react-icons/fa';
 
@@ -44,7 +45,7 @@ const Projects = () => {
     "Axios"
   ],
   github: "https://github.com/yourusername/movieflix",
-  live: "https://movieflix-live-link.com",
+  live: "https://movieflex-theta.vercel.app",
   icon: "🎬",
   featured: false,
   category: "frontend",
@@ -133,6 +134,7 @@ const Projects = () => {
     "Responsive Design"
   ]
 },
+
   ];
 
   const filters = [
@@ -162,6 +164,12 @@ const Projects = () => {
             <FaCode className="text-blue-600" />
             <span className="text-sm font-medium text-blue-700">My Work Portfolio</span>
           </div>
+
+            <div className="text-sm text-gray-600 mt-2">
+              <span className="text-red-500">*</span>{" "}
+              Backend is hosted on Render (Free Tier). If inactive, the server may sleep and take a few seconds to wake up.
+            </div>
+
           
           <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
             Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Projects</span>

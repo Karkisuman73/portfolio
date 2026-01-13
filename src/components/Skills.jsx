@@ -39,9 +39,7 @@ const Skills = () => {
         { name: "Git & GitHub", level: 91, color: "from-gray-700 to-black", icon: "🐙" },
         { name: "VS Code", level: 96, color: "from-blue-400 to-blue-600", icon: "💻" },
         { name: "Postman", level: 88, color: "from-orange-500 to-red-500", icon: "📬" },
-        { name: "Vercel/Netlify", level: 86, color: "from-black to-gray-700", icon: "☁️" },
-        { name: "AWS Basics", level: 78, color: "from-orange-400 to-yellow-400", icon: "☁️" },
-        { name: "Docker", level: 75, color: "from-blue-500 to-cyan-500", icon: "🐳" }
+        { name: "Vercel/Netlify", level: 86, color: "from-black to-gray-700", icon: "☁️" }
       ]
     }
   };

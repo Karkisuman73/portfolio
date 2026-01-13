@@ -21,10 +21,9 @@ const Contact = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [activeMethod, setActiveMethod] = useState('whatsapp'); // 'whatsapp' or 'email'
+  const [activeMethod, setActiveMethod] = useState('whatsapp'); 
 
-  // Your WhatsApp number in international format (without + sign)
-  const whatsappNumber = "9779804038669"; // Replace with your actual number
+  const whatsappNumber = "9779804038669"; 
 
   const socialLinks = [
     { 
@@ -74,9 +73,7 @@ const Contact = () => {
     }
   ];
 
-  // Function to open WhatsApp with form data
   const sendToWhatsApp = (data) => {
-    // Format the message for WhatsApp
     const message = `Hello Suman Karki!
 
 *Contact Inquiry From Portfolio*
@@ -90,13 +87,8 @@ ${data.message}
 ---
 Sent from your portfolio website`;
 
-    // URL encode the message
     const encodedMessage = encodeURIComponent(message);
-    
-    // Create WhatsApp URL
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-    
-    // Open WhatsApp in new tab
     window.open(whatsappUrl, '_blank');
   };
 
@@ -104,7 +96,6 @@ Sent from your portfolio website`;
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Validate form
     if (!formData.name || !formData.email || !formData.message) {
       alert('Please fill in all fields');
       setIsSubmitting(false);
@@ -112,18 +103,13 @@ Sent from your portfolio website`;
     }
     
     if (activeMethod === 'whatsapp') {
-      // Send data to WhatsApp
       sendToWhatsApp(formData);
     } else {
-      // For email, you would typically use a backend service
-      // For now, we'll simulate sending via mailto
       const subject = `Contact from ${formData.name}`;
       const body = `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
       const mailtoLink = `mailto:kar.suman773@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       window.location.href = mailtoLink;
     }
-    
-    // Reset form and submission state
     setTimeout(() => {
       setFormData({ name: '', email: '', message: '' });
       setIsSubmitting(false);
@@ -139,7 +125,6 @@ Sent from your portfolio website`;
 
   return (
     <section id="contact" className="relative min-h-screen py-12 md:py-24 overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900">
-      {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"></div>
@@ -147,7 +132,6 @@ Sent from your portfolio website`;
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
         <div className="text-center mb-12 md:mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-400/30 mb-4 md:mb-6">
             <FaPaperPlane className="text-blue-400 text-sm" />
@@ -162,7 +146,6 @@ Sent from your portfolio website`;
           </p>
         </div>
 
-        {/* Contact Method Selector - Mobile First */}
         <div className="mb-8 md:mb-12">
           <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
             {contactMethods.map((method) => (
@@ -194,9 +177,7 @@ Sent from your portfolio website`;
         </div>
 
         <div className="grid lg:grid-cols-3 gap-6 md:gap-8">
-          {/* Contact Info Cards */}
           <div className="lg:col-span-1 space-y-6">
-            {/* Contact Information Card */}
             <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 md:p-8 border border-white/20 hover:border-blue-400/30 transition-all duration-300">
               <h3 className="text-xl md:text-2xl font-bold text-white mb-6 md:mb-8 flex items-center gap-3">
                 <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-gradient-to-br from-blue-500/20 to-blue-600/20 flex items-center justify-center">
@@ -206,7 +187,6 @@ Sent from your portfolio website`;
               </h3>
               
               <div className="space-y-6">
-                {/* Email */}
                 <a 
                   href="mailto:kar.suman773@gmail.com"
                   className="flex items-start gap-4 group p-3 rounded-lg hover:bg-white/5 transition-all duration-300"
@@ -222,8 +202,6 @@ Sent from your portfolio website`;
                     <p className="text-gray-500 text-xs md:text-sm mt-1">Always available</p>
                   </div>
                 </a>
-
-                {/* Phone */}
                 <a 
                   href="tel:9779804038669"
                   className="flex items-start gap-4 group p-3 rounded-lg hover:bg-white/5 transition-all duration-300"
@@ -239,8 +217,6 @@ Sent from your portfolio website`;
                     <p className="text-gray-500 text-xs md:text-sm mt-1">Available 10AM - 6PM NPT</p>
                   </div>
                 </a>
-
-                {/* Location */}
                 <div className="flex items-start gap-4 group p-3 rounded-lg">
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/20 to-purple-600/20 flex items-center justify-center flex-shrink-0">
                     <FaMapMarkerAlt className="w-5 h-5 md:w-6 md:h-6 text-purple-400" />
@@ -251,8 +227,6 @@ Sent from your portfolio website`;
                     <p className="text-gray-500 text-xs md:text-sm mt-1">Open to remote opportunities</p>
                   </div>
                 </div>
-
-                {/* Availability */}
                 <div className="flex items-start gap-4 group p-3 rounded-lg">
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500/20 to-amber-600/20 flex items-center justify-center flex-shrink-0">
                     <FaClock className="w-5 h-5 md:w-6 md:h-6 text-amber-400" />
@@ -265,8 +239,6 @@ Sent from your portfolio website`;
                 </div>
               </div>
             </div>
-
-            {/* Social Links */}
             <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 md:p-8 border border-white/20">
               <h4 className="text-lg md:text-xl font-bold text-white mb-4 md:mb-6">Find Me Online</h4>
               <div className="grid grid-cols-2 gap-3 md:gap-4">
@@ -289,8 +261,6 @@ Sent from your portfolio website`;
               </div>
             </div>
           </div>
-
-          {/* Contact Form */}
           <div className="lg:col-span-2">
             <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 md:p-8 border border-white/20">
               <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-8">
@@ -359,8 +329,6 @@ Sent from your portfolio website`;
                     placeholder="Tell me about your project, timeline, and requirements..."
                   />
                 </div>
-
-                {/* Submit Button */}
                 <div className="pt-4 md:pt-6">
                   <button
                     type="submit"
@@ -391,8 +359,6 @@ Sent from your portfolio website`;
                   </button>
                 </div>
               </form>
-
-              {/* Instructions */}
               <div className={`mt-6 p-4 rounded-xl border ${activeMethod === 'whatsapp' ? 'bg-green-500/10 border-green-400/20' : 'bg-blue-500/10 border-blue-400/20'}`}>
                 <div className="flex items-start gap-3">
                   <div className={`w-8 h-8 rounded-lg ${activeMethod === 'whatsapp' ? 'bg-green-500/20' : 'bg-blue-500/20'} flex items-center justify-center flex-shrink-0`}>
@@ -423,8 +389,6 @@ Sent from your portfolio website`;
                 </div>
               </div>
             </div>
-
-            {/* Quick Stats */}
             <div className="mt-6 grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
               <div className="bg-gradient-to-br from-blue-500/10 to-blue-600/10 backdrop-blur-xl rounded-xl p-4 border border-blue-400/20">
                 <div className="text-blue-300 text-xs md:text-sm mb-1">Response Time</div>
@@ -441,8 +405,6 @@ Sent from your portfolio website`;
             </div>
           </div>
         </div>
-
-        {/* Quick Contact CTA */}
         <div className="mt-12 md:mt-20">
           <div className="bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 backdrop-blur-xl rounded-2xl p-6 md:p-8 border border-white/10">
             <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8">
@@ -473,8 +435,6 @@ Sent from your portfolio website`;
             </div>
           </div>
         </div>
-
-        {/* Footer Note */}
         <div className="mt-8 md:mt-12 text-center">
           <p className="text-gray-400 text-sm">
             Looking forward to connecting with you! 
