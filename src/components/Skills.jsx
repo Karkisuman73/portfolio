@@ -212,7 +212,7 @@ const Skills = () => {
         </div>
 
         {/* Learning Journey */}
-        <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-8 border border-blue-200/50">
+        {/* <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-8 border border-blue-200/50">
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Continuous Learning Journey</h3>
@@ -240,7 +240,7 @@ const Skills = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* CTA */}
         <div className="mt-16 text-center">
