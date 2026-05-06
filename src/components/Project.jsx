@@ -133,7 +133,34 @@ const Projects = () => {
     "Admin Dashboard",
     "Responsive Design"
   ]
+  
 },
+{
+  id: 5,
+  title: "Astrology Consultation Platform",
+  description:
+    "A full-stack astrology website developed for a client, offering services like horoscope readings, kundli analysis, and personalized consultations. The platform includes an admin panel for content management, booking system, and automated email communication.",
+  technologies: [
+    "React",
+    "Tailwind CSS",
+    "JavaScript",
+    "Node.js",
+    "Express",
+    "MongoDB"
+  ],
+  github: "", 
+  live: "https://theastromaster.com/",
+  icon: "🔮",
+  featured: true,
+  category: "fullstack",
+  highlights: [
+    "Admin Dashboard for Posting Photos & Managing Content",
+    "Online Booking System with Form Handling",
+    "Automated Email Notifications to Clients",
+    "User Comment & Reply System",
+    "Fully Responsive & SEO-Friendly Design"
+  ]
+}
 
   ];
 
