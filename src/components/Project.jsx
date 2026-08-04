@@ -20,7 +20,6 @@ const Projects = () => {
       "Redux",
       "Bootstrap"
     ],
-    github: "https://github.com/yourusername/job-portal",
     live: "https://jobportal-frontend-pied.vercel.app",
     icon: "💼",
     featured: true,
@@ -44,7 +43,6 @@ const Projects = () => {
     "Tailwind CSS",
     "Axios"
   ],
-  github: "https://github.com/yourusername/movieflix",
   live: "https://movieflex-theta.vercel.app",
   icon: "🎬",
   featured: false,
@@ -56,29 +54,30 @@ const Projects = () => {
     "Clean UI"
   ]
 },
-   {
+{
   id: 3,
-  title: "GoFrostek E-commerce Website",
+  title: "GoFrostek E-commerce Platform",
   description:
-    "A WordPress-based e-commerce website built using WooCommerce, featuring product listings, user authentication, cart functionality, and secure payment integration. Designed for a clean shopping experience and easy product management.",
+    "A complete MERN stack e-commerce platform developed with React, Node.js, Express, and MongoDB. Features secure authentication, product management, shopping cart, order management, admin dashboard, and integrated Khalti & ConnectIPS payment gateways for seamless online transactions.",
   technologies: [
-    "WordPress",
-    "WooCommerce",
-    "PHP",
-    "MySQL",
-    "Payment Gateway",
-    "Elementor"
+    "React",
+    "Node.js",
+    "Express",
+    "MongoDB",
+    "JWT",
+    "Tailwind CSS",
+    "Khalti API",
+    "ConnectIPS",
   ],
-  github: null,
   live: "https://gofrostek.com/",
-  icon: "🧊",
-  featured: false,
-  category: "ecommerce",
+  icon: "🛒",
+  featured: true,
+  category: "fullstack",
   highlights: [
-    "WooCommerce Setup",
-    "Payment Gateway Integration",
-    "User Login & Checkout",
-    "Product & Order Management"
+    "Admin Dashboard",
+    "Khalti Payment Integration",
+    "ConnectIPS Payment Integration",
+    "Order & Inventory Management"
   ]
 }
 ,
@@ -94,7 +93,6 @@ const Projects = () => {
     "Google Forms",
     "WhatsApp Redirect"
   ],
-  github: "https://github.com/yourusername/gym-website",
   live: "https://pinnacel-fitness.vercel.app",
   icon: "🏋️",
   featured: false,
@@ -294,29 +292,21 @@ const Projects = () => {
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="flex gap-3 pt-4 border-t border-gray-100">
-                    <a
-                      href={project.github}
-                      className="flex-1 group/github relative overflow-hidden"
-                    >
-                      <div className="absolute inset-0 bg-gradient-to-r from-gray-900 to-gray-700 opacity-0 group-hover/github:opacity-100 transition-opacity duration-300"></div>
-                      <button className="relative w-full flex items-center justify-center gap-2 px-4 py-3 bg-gray-100 text-gray-700 rounded-lg group-hover:text-white transition-all duration-300">
-                        <FaGithub />
-                        <span className="font-medium">Code</span>
-                      </button>
-                    </a>
-                    
-                    <a
-                      href={project.live}
-                      className="flex-1 group/live relative overflow-hidden"
-                    >
-                      <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover/live:opacity-100 transition-opacity duration-300"></div>
-                      <button className="relative w-full flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg transition-all duration-300">
-                        <FaEye />
-                        <span className="font-medium">Live Demo</span>
-                      </button>
-                    </a>
-                  </div>
+                 <div className="pt-4 border-t border-gray-100">
+  <a
+    href={project.live}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="group/live relative overflow-hidden block"
+  >
+    <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover/live:opacity-100 transition-opacity duration-300"></div>
+
+    <button className="relative w-full flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg transition-all duration-300">
+      <FaEye />
+      <span className="font-medium">Live Demo</span>
+    </button>
+  </a>
+</div>
                 </div>
               </div>
             </div>
